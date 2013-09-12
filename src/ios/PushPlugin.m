@@ -36,11 +36,8 @@
 
 - (void)dealloc
 {
-    [notificationMessage release];
     self.notificationCallbackId = nil;
     self.callback = nil;
-
-    [super dealloc];
 }
 
 - (void)unregister:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
