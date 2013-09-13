@@ -213,4 +213,12 @@ public class PushPlugin extends CordovaPlugin {
 		gECB = null;
 		super.onDestroy();
 	}
+
+	@Override
+	public void onPause(boolean multitasking) {
+		Log.v(TAG, " Pause!");
+		gWebView = null;
+		gECB = null;
+
+	}
 }
