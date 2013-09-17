@@ -211,7 +211,7 @@
     
         if ([thisObject isKindOfClass:[NSDictionary class]])
             [self parseDictionary:thisObject intoJSON:jsonString];
-        else
+        else {
             NSMutableString *s = [NSMutableString stringWithString:[inDictionary objectForKey:key]];
             [s replaceOccurrencesOfString:@"\'" withString:@"\\\'" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
             [s replaceOccurrencesOfString:@"/" withString:@"\\/" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
@@ -222,6 +222,7 @@
             [s replaceOccurrencesOfString:@"\t" withString:@"\\t" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
         
             [jsonString appendFormat:@"%@:'%@',", key, s];
+        }
     }
 }
 
